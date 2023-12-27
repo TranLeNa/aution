@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.DashboardFragment">
+    <!-- Banner Image -->
+    <ImageView
+        android:id="@+id/bannerImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/ic_launcher_background"
+        android:contentDescription="banner"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- GridLayout for the top row of images -->
+    <GridLayout
+        android:id="@+id/topRowGridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:columnCount="4"
+        android:padding="4dp"
+        android:rowCount="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bannerImageView">
+
+        <!-- ImageView placeholders within the GridLayout -->
+        <!-- These ImageViews will be automatically arranged in the GridLayout -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:contentDescription="image 1"
+                android:scaleType="centerCrop"
+                android:src="@color/cardview_shadow_start_color" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:contentDescription="image 1"
+                android:scaleType="centerCrop"
+                android:src="@color/cardview_shadow_start_color" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:contentDescription="image 1"
+                android:scaleType="centerCrop"
+                android:src="@color/cardview_shadow_start_color" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:contentDescription="image 1"
+                android:scaleType="centerCrop"
+                android:src="@color/cardview_shadow_start_color" />
+        </FrameLayout>
+    </GridLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topRowGridLayout">
+
+        <!-- GridLayout for image thumbnails -->
+        <GridLayout
+            android:id="@+id/itemGridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="1"
+            android:orientation="horizontal"
+            android:paddingBottom="100dp"
+            android:rowCount="30"
+            android:useDefaultMargins="true">
+
+            <include  layout="@layout/item_image_with_text" />
+
+        </GridLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
